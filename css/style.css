@@ -1,0 +1,51 @@
+body{
+    margin: 0px !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container-login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+.ml-6{
+    margin-left: 40px !important;
+}
+
+.title{
+    margin-left: 75px !important;
+}
+
+input{    
+    width: 90% !important;
+}
+
+.btn-login {
+    width: 150px !important;
+    border-radius: 25px !important; 
+    margin-left: 119px;
+
+    
+}
+.checkbox{
+    background-color: red;
+}
+
+.box {
+    width: 400px;
+    height: 400px;
+    background: #fff;
+}
+
+
+.no-border {
+    border: 0 !important;
+    box-shadow: none !important;
+}
