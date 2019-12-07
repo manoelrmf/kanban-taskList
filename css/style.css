@@ -49,3 +49,122 @@ input{
     border: 0 !important;
     box-shadow: none !important;
 }
+
+.logo-tasks{
+    float: none;
+}
+
+.t{
+    opacity: 0.5;
+}
+
+.components-nav{
+    opacity: 1;
+}
+
+.boxes{
+    width: 100%;
+    height: auto ;
+
+}
+
+.translucent{
+    opacity: 0.7;
+}
+
+
+:root {
+  font-size: calc(0.5vw + 1vh);
+}
+
+body {
+  min-width: 420px;
+}
+
+
+span {
+  font-size: 3rem;
+}
+
+p {
+  font-family: "Roboto Slab", serif;
+}
+
+
+header,
+footer {
+  width: 40rem;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.task-list {
+  min-height: 10rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.column-button {
+  text-align: center;
+  padding: 0.1rem;
+}
+
+.card-tasks {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+  }
+  
+  .card-tasks:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container-tasks {
+    padding: 2px 16px;
+  }
+
+
+.task p {
+  margin: auto;
+}
+    
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+  
+  .gu-hide {
+    display: none !important;
+  }
+  
+  .gu-unselectable {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+  
+  .gu-transit {
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
+  
