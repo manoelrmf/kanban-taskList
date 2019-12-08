@@ -12,8 +12,9 @@ $(document).ready(function () {
     const clear = createClearComponents();
     const animation = createAnimationsComponents();
 
-    autoChangeComponents()
-   /* window.setInterval(function(){
+    changeComponents(0)
+    //autoChangeComponents()
+   /*window.setInterval(function(){
         autoChangeComponents()
     }, 10000); */
 
@@ -25,14 +26,21 @@ $(document).ready(function () {
         }else id = 0;
     }
 
+    function changeComponents(idCor){
+        id = idCor
+        const autoChange = createAutoChangeComponents()
+        autoChange.components()
+    }
+
     function  createAutoChangeComponents(){
         function components(){
             clear.classes();
             clear.animations();
             change.background();
             change.color();
-            animation.infinite('.btn-login, .task', 'pulse');
         }
+
+       
         return{
             components
         }
@@ -50,6 +58,8 @@ $(document).ready(function () {
                     nav.addClass('navbar-primary')
                     card.addClass('bg-primary')
                     card.addClass('text-white')
+                    $('.icon-git').attr('src', 'img/icons/gitWhite.png')
+                    $('#github').addClass('text-white')
                     break;
                 case 1:
                     b.addClass('text-danger');
@@ -59,6 +69,8 @@ $(document).ready(function () {
                     nav.addClass('navbar-danger')
                     card.addClass('bg-danger')
                     card.addClass('text-white')
+                    $('.icon-git').attr('src', 'img/icons/gitWhite.png')
+                    $('#github').addClass('text-white')
                     break;
                 case 2:
                     b.addClass('text-info');
@@ -68,6 +80,8 @@ $(document).ready(function () {
                     nav.addClass('navbar-info')
                     card.addClass('bg-info')
                     card.addClass('text-white')
+                    $('.icon-git').attr('src', 'img/icons/gitWhite.png')
+                    $('#github').addClass('text-white')
                     break;
                 case 3:
                     b.addClass('text-success');
@@ -77,6 +91,8 @@ $(document).ready(function () {
                     nav.addClass('navbar-success')
                     card.addClass('bg-success')
                     card.addClass('text-white')
+                    $('.icon-git').attr('src', 'img/icons/gitWhite.png')
+                    $('#github').addClass('text-white')
                     break;
                 default:
                     break;
@@ -88,9 +104,10 @@ $(document).ready(function () {
            b.css("background-image", "url(img/" + id + ".jpg)")
         }
         
+        
         return {
             color,
-            background
+            background,
         }
     }
 
@@ -187,10 +204,11 @@ $(document).ready(function () {
     });
     
 
+    animation.infinite('.btn-login, .task', 'pulse');
     animation.bounceInLeft('.footer-bottom')
     animation.flipInX('.boxes')
     animation.infinite('.icon-close', 'rubberBand')
-    animation.infiniteTarget('.icon-github','.link-git','bounce')
+    animation.infiniteTarget('.icon-github-black','.link-git','bounce')
  });
 
 

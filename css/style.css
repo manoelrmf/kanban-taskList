@@ -67,8 +67,8 @@ input{
     overflow-x: hidden;
 }
 
-.translucent{
-    opacity: 0.7;
+.op-8{
+    opacity: 0.8;
 }
 
 
@@ -185,7 +185,7 @@ li {
     width: 20px;
   }
 
-  .icon-github{
+  .icon-github-black{
     float: left;
     width: 40px;
     margin-left: 40px;
