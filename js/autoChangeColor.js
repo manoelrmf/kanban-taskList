@@ -178,10 +178,9 @@ $(document).ready(function () {
     });
     
 
-    animation.infinite('.btn-login, .task', 'pulse');
-    animation.classe('.link-git, .boxes', 'bounceIn')
+    animation.infinite('.btn-login, .task , .icon-settings', 'pulse');
+    animation.classe('.link-git, .boxes,.icon-settings', 'bounceIn')
     animation.infinite('.icon-close', 'rubberBand')
     animation.infiniteTarget('.icon-github-black','.link-git','bounce')
+
  });
-
-
