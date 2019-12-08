@@ -18,11 +18,11 @@
             </nav>
         </section>
     </header>
-      <main class="ml-5 mr-5">
-            <div class="card-columns">
+      <main class="ml-5 mr-5 ">
+            <div class="card-columns op-8">
 
-                    <div class="card boxes box-to-do">
-                          <div class="card-header">
+                    <div class="card boxes box-to-do ">
+                          <div class="card-header mt-2">
                                 <img src="img/icons/toDo.png" id="to-do" class="icon icon-to-do" alt="Em andamento">
                                 <img src="img/icons/close.png" id="to-do-close" class="icon icon-close" alt="Fechar">
                                 <h5>A fazer</h5>      
@@ -30,6 +30,16 @@
               
                             <li class="to-do-column">
                      <ul class="task-list" id="aFazer">
+                       
+                       <li class="task ">
+                            <div class="card text-white bg-primary mb-3" >
+                                    <div class="card-body">
+                                      <h5 class="card-title">Jogar o lixo fora</h5>
+                                      <p class="card-text">Jogar o lixo foraJogar o lixo foraJogar o lixo foraJogar o lixo foraJogar o lixo foraJogar o lixo fora</p>
+                                    </div>
+                                  </div> 
+                       </li>
+                       
                        <li class="task">
                             <div class="card text-white bg-primary mb-3" >
                                     <div class="card-body">
@@ -51,7 +61,7 @@
                   </div>
                                 
                     <div class="card boxes box-doing">
-                      <div class="card-header">
+                      <div class="card-header mt-2">
                             <img src="img/icons/doing.png" id="doing" class="icon icon-doing" alt="Em andamento">
                             <img src="img/icons/close.png" id="doing-close" class="icon icon-close" alt="Fechar">
                           <h5>Em andamento</h5>
@@ -64,7 +74,7 @@
                     </div>
                 
                     <div class="card boxes box-done">
-                          <div class="card-header">
+                          <div class="card-header mt-2">
                                 <img src="img/icons/done.png" id="to-do-done" class="icon icon-done" alt="Concluido">
                                 <img src="img/icons/close.png" id="done-close" class="icon icon-close" alt="Fechar">
                               <h5 class="mr-5">Concluido</h5>
@@ -81,9 +91,14 @@
                      </div>
               
       </main>
-    <footer class="fixed-bottom text-white footer-bottom">
-        <div class="footer-copyright text-center py-3">
-            <a href="https://github.com/manoribeiro" target="_blank">Manoel Ribeiro</a>
+    <footer class="fixed-bottom text-white op-8">
+        <div class="link-git">
+            <a href="https://github.com/manoribeiro" class=" h4" target="_blank">
+                <div> 
+                    <img src="img/icons/icongitblack.jpg" class="icon-git icon-github-black" alt="">
+                    <h4 class="mt-2 ml-2 float-left" id="github">@manoribeiro</h4>
+                </div>
+            </a>
         </div>
     </footer>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>

@@ -12,11 +12,11 @@ $(document).ready(function () {
     const clear = createClearComponents();
     const animation = createAnimationsComponents();
 
-    changeComponents(0)
-    //autoChangeComponents()
-   /*window.setInterval(function(){
+   changeComponents(1)
+   /*autoChangeComponents()
+   window.setInterval(function(){
         autoChangeComponents()
-    }, 10000); */
+    }, 5000); */
 
     function autoChangeComponents(){
         const autoChange = createAutoChangeComponents();
@@ -51,31 +51,26 @@ $(document).ready(function () {
         function color(){
             switch (id) {
                 case 0:
-                    b.addClass('text-primary');
-                    c.addClass('btn-primary');
-                    c.addClass('bg-primary');
+                    $('.box').addClass(' bg-primary text-white op-8')
+                    $('.btn-login').addClass('text-primary btn-light')
                     i.addClass('border border-primary');
                     nav.addClass('navbar-primary')
-                    card.addClass('bg-primary')
-                    card.addClass('text-white')
+                    card.addClass('bg-primary text-white')
                     $('.icon-git').attr('src', 'img/icons/gitWhite.png')
                     $('#github').addClass('text-white')
                     break;
                 case 1:
-                    b.addClass('text-danger');
-                    c.addClass('btn-danger');
-                    c.addClass('bg-danger');
+                    $('.box').addClass(' bg-danger text-white op-8')
+                    $('.btn-login').addClass('text-danger btn-light')
                     i.addClass('border border-danger');
                     nav.addClass('navbar-danger')
-                    card.addClass('bg-danger')
-                    card.addClass('text-white')
+                    card.addClass('bg-danger text-white')
                     $('.icon-git').attr('src', 'img/icons/gitWhite.png')
                     $('#github').addClass('text-white')
                     break;
                 case 2:
-                    b.addClass('text-info');
-                    c.addClass('btn-info');
-                    c.addClass('bg-info');
+                    $('.box').addClass(' bg-info text-white op-8')
+                    $('.btn-login').addClass('text-info btn-light')
                     i.addClass('border border-info');
                     nav.addClass('navbar-info')
                     card.addClass('bg-info')
@@ -84,9 +79,8 @@ $(document).ready(function () {
                     $('#github').addClass('text-white')
                     break;
                 case 3:
-                    b.addClass('text-success');
-                    c.addClass('btn-success');
-                    c.addClass('bg-success');
+                    $('.box').addClass(' bg-success text-white op-8')
+                    $('.btn-login').addClass('text-success btn-light')
                     i.addClass('border border-success');
                     nav.addClass('navbar-success')
                     card.addClass('bg-success')
@@ -113,7 +107,10 @@ $(document).ready(function () {
 
     function createClearComponents(){
         function classes(){
-            $.each(cors ,function (index, value) { 
+            $.each(cors ,function (index, value) {
+                $('.box').removeClass('text-' + value);
+                $('.btn-login').removeClass('text-' + value);
+
                 b.removeClass('text-' + value);
                 c.removeClass('btn-' + value);
                 c.removeClass('bg-' + value);
@@ -157,56 +154,32 @@ $(document).ready(function () {
             });
         }
         
-        function fadeOut(selector){
-               $(selector).addClass('animated fadeOut');
+        function classe(selector, animation){
+               $(selector).addClass('animated ' + animation);
         }
 
-        function flipInX(selector){
-            $(selector).addClass('animated flipInX');
-        }
-
-        function fadeIn(selector){
-            $(selector).addClass('animated fadeIn');
-        }
-
-        function bounceOut(selector){
-            $(selector).addClass('animated bounceOut');
-        }
-
-        function bounceInLeft(selector){
-            $(selector).addClass('animated bounceInLeft');
-        }
-
-        function bounceInLeft(selector){
-            $(selector).addClass('animated bounceInLeft');
-        }
         return{
             infinite,
             infiniteTarget,
-            fadeIn,
-            fadeOut,
-            flipInX,
-            bounceInLeft,
-            bounceOut
+            classe
         }   
     }
 
     $('.btn-login').on('click', function(e){
-        animation.bounceOut('.container-login')
+        animation.classe('.container-login', 'bounceOut')
     });
 
     $('.icon-close').on('click', function(e){
         var idClose =  e.target.id
         clear.animation('.flipInX','animated flipInX')
-        if(e.target.id === 'to-do-close') animation.bounceOut('.box-to-do')
-        if(e.target.id === 'doing-close') animation.bounceOut('.box-doing')
-        if(e.target.id === 'done-close')  animation.bounceOut('.box-done')
+        if(e.target.id === 'to-do-close') animation.classe('.box-to-do','bounceOut')
+        if(e.target.id === 'doing-close') animation.classe('.box-doing')
+        if(e.target.id === 'done-close')  animation.classe('.box-done')
     });
     
 
     animation.infinite('.btn-login, .task', 'pulse');
-    animation.bounceInLeft('.footer-bottom')
-    animation.flipInX('.boxes')
+    animation.classe('.link-git, .boxes', 'bounceIn')
     animation.infinite('.icon-close', 'rubberBand')
     animation.infiniteTarget('.icon-github-black','.link-git','bounce')
  });

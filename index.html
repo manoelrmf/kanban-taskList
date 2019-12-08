@@ -7,15 +7,21 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+	<style>
+		body{
+			overflow: hidden;
+		}
+	</style>
 </head>
 <body>
-	<div class="container-login animated bounceInLeft">
-		<div class="box shadow-lg  mb-5 rounded ">
-				<div class="p-3 mb-2 bg-primary component rounded-top"></div>
-				<h3 class="ml-7 title mt-3">Entre em sua conta</h1>
-				<hr class="component bg-primary w-75">
+	<div class="container-login animated bounceInLeft  ">
+		<div class="box shadow-lg  mb-5 rounded card">
+				<div class="card-header h3 text-center">Entre em sua conta</div>
+				<img src="img/logo.png" class="logo-tasks" alt="">
+				<hr class="w-75 hr-login bg-white">
+
 			<form class="" >
-				<div class="form-group mt-5 ml-6">
+				<div class="form-group mt-3 ml-6">
 				  <label for="exampleInputEmail1">E-mail</label>
 					  <input type="email" class="form-control no-border" id="exampleInputEmail1" placeholder="Digite seu e-mail" onfocus>
 				</div>
@@ -23,7 +29,7 @@
 					<label for="exampleInputPassword1">Senha</label>
 					  <input type="password" class="form-control no-border" id="exampleInputPassword1" placeholder="Digite sua senha">
 				</div>
-				<button type="button" class="btn btn-primary btn-login mt-4 component">Entrar</button>
+				<button type="button" class="btn btn-login mt-4 component">Entrar</button>
 			</form>
 		</div>
 	</div>
