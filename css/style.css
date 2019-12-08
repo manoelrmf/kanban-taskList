@@ -168,3 +168,26 @@ li {
     filter: alpha(opacity=20);
   }
   
+  .icon-close{
+    float: right;
+    width: 20px;
+  }
+
+  .icon-done{
+    float: left;
+    width: 20px;
+  }
+
+  .icon{
+      margin-left: 10px;
+      margin-right: 6px;
+  }
+  .icon-doing{
+    float: left;
+    width: 20px;
+  }
+
+  .icon-to-do{
+    float: left;
+    width: 20px;
+  }

@@ -7,15 +7,15 @@ $(document).ready(function () {
     var card = $('.card')
     var id = 0;
     var cors = ["primary", "danger", "info", "success"];
-    var animationsClass = ["fadeOut", "fadeIn", "bounceOut"]
+    var animationsClass = ["fadeOut", "fadeIn", "bounceOut", "flipInX"]
     const change = createChangeComponents();
     const clear = createClearComponents();
     const animation = createAnimationsComponents();
 
     autoChangeComponents()
-    /*window.setInterval(function(){
+   /* window.setInterval(function(){
         autoChangeComponents()
-    }, 10000);*/ 
+    }, 10000); */
 
     function autoChangeComponents(){
         const autoChange = createAutoChangeComponents();
@@ -31,7 +31,7 @@ $(document).ready(function () {
             clear.animations();
             change.background();
             change.color();
-            animation.pulseMouseEnterAndLeave('.btn-login');
+            animation.infinite('.btn-login, .task', 'pulse');
         }
         return{
             components
@@ -106,6 +106,10 @@ $(document).ready(function () {
             });
         }
 
+        function animation(selector, animatedClass){
+            $(selector).removeClass(animatedClass)
+        }
+
         function animations(){
             $.each(animationsClass, function(index, value){
                 $('.animated').removeClass('animated ' + value)
@@ -114,29 +118,49 @@ $(document).ready(function () {
 
         return{
             classes,
+            animation,
             animations
         }
     }
 
     function createAnimationsComponents(){
 
-        function pulseMouseEnterAndLeave(selector){
+        function infinite(selector, animatedClass){
             $(selector).bind('mouseenter mouseleave', function (e) { 
-                if(e.type=='mouseenter') $(this).addClass('animated infinite pulse');
-                else                     $(this).removeClass('animated infinite pulse');
+                if(e.type=='mouseenter') $(this).addClass('animated infinite ' + animatedClass);
+                else                     $(this).removeClass('animated infinite ' + animatedClass);
             });
         }
-
+        
         function fadeOut(selector){
                $(selector).addClass('animated fadeOut');
         }
 
+        function flipInX(selector){
+            $(selector).addClass('animated flipInX');
+        }
+
+        function fadeIn(selector){
+            $(selector).addClass('animated fadeIn');
+        }
+
         function bounceOut(selector){
             $(selector).addClass('animated bounceOut');
-     }
+        }
+
+        function bounceInLeft(selector){
+            $(selector).addClass('animated bounceInLeft');
+        }
+
+        function bounceInLeft(selector){
+            $(selector).addClass('animated bounceInLeft');
+        }
         return{
-            pulseMouseEnterAndLeave,
+            infinite,
+            fadeIn,
             fadeOut,
+            flipInX,
+            bounceInLeft,
             bounceOut
         }   
     }
@@ -144,7 +168,19 @@ $(document).ready(function () {
     $('.btn-login').on('click', function(e){
         animation.bounceOut('.container-login')
     });
+
+    $('.icon-close').on('click', function(e){
+        var idClose =  e.target.id
+        clear.animation('.flipInX','animated flipInX')
+        if(e.target.id === 'to-do-close') animation.bounceOut('.box-to-do')
+        if(e.target.id === 'doing-close') animation.bounceOut('.box-doing')
+        if(e.target.id === 'done-close')  animation.bounceOut('.box-done')
+    });
     
+
+    animation.bounceInLeft('.footer-bottom')
+    animation.flipInX('.boxes')
+    animation.infinite('.icon-close', 'rubberBand')
  });
 
 
