@@ -4,7 +4,6 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    overflow: hidden;
 }
 
 .container-login {
@@ -64,8 +63,8 @@ input{
 
 .boxes{
     width: 100%;
-    height: auto ;
-
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .translucent{
@@ -91,13 +90,6 @@ p {
 }
 
 
-header,
-footer {
-  width: 40rem;
-  margin: 2rem auto;
-  text-align: center;
-}
-
 .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -105,7 +97,8 @@ footer {
 }
 
 .task-list {
-  min-height: 10rem;
+  min-height: 15rem;
+  max-height: 30rem;
 }
 
 ul {
@@ -154,7 +147,7 @@ li {
   .gu-hide {
     display: none !important;
   }
-  
+
   .gu-unselectable {
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
@@ -190,4 +183,11 @@ li {
   .icon-to-do{
     float: left;
     width: 20px;
+  }
+
+  .icon-github{
+    float: left;
+    width: 40px;
+    margin-left: 40px;
+    margin-bottom: 25px;
   }

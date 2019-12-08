@@ -125,6 +125,14 @@ $(document).ready(function () {
 
     function createAnimationsComponents(){
 
+        function infiniteTarget(target, selector,animatedClass){
+            $(selector).bind('mouseenter mouseleave', function (e) { 
+                if(e.type=='mouseenter') $(target).addClass('animated infinite ' + animatedClass);
+                else                     $(target).removeClass('animated infinite ' + animatedClass);
+            });
+        }
+        
+
         function infinite(selector, animatedClass){
             $(selector).bind('mouseenter mouseleave', function (e) { 
                 if(e.type=='mouseenter') $(this).addClass('animated infinite ' + animatedClass);
@@ -157,6 +165,7 @@ $(document).ready(function () {
         }
         return{
             infinite,
+            infiniteTarget,
             fadeIn,
             fadeOut,
             flipInX,
@@ -181,6 +190,7 @@ $(document).ready(function () {
     animation.bounceInLeft('.footer-bottom')
     animation.flipInX('.boxes')
     animation.infinite('.icon-close', 'rubberBand')
+    animation.infiniteTarget('.icon-github','.link-git','bounce')
  });
 
 
